@@ -17,7 +17,7 @@ class DataProvider:
     @property
     def list_of_videos(self):
         if self._list_of_videos is None:
-            self._list_of_videos = [i[17:-4] for i in ZipFile(self._zip_file_path).namelist()
+            self._list_of_videos = [i[len(self._annotations_zip):-4] for i in ZipFile(self._zip_file_path).namelist()
                                     if i.startswith(self._annotations_zip) and i.endswith('csv')]
         return self._list_of_videos
 
