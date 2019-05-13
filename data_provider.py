@@ -87,8 +87,8 @@ class DataProvider:
         video_data = []
         for i in read_files:
             video_data.append(self.get_video(i))
-
-        return video_data
+        pd_data = pd.concat(video_data,ignore_index=True)
+        return pd_data
 
 
 
