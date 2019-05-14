@@ -15,7 +15,6 @@ class DataProvider:
         self._list_of_videos = None
         self._type = None
 
-
     @property
     def list_of_videos(self):
         if self._list_of_videos is None:
@@ -81,12 +80,9 @@ class DataProvider:
         zip = ZipFile(self._zip_file_path)
 
         read_files = zip.open(f'data/{type}videos').read().split()
-
-        for i in range(len(read_files)):
-            read_files[i] = str(read_files[i], 'utf-8')[0:-4]
         video_data = []
-        for i in read_files:
-            video_data.append(self.get_video(i))
+        for i in range(len(read_files)):
+            video_data.append(self.get_video(str(read_files[i], 'utf-8')[0:-4]))
         pd_data = pd.concat(video_data,ignore_index=True)
         return pd_data
 
