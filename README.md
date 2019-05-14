@@ -1,4 +1,3 @@
 # Gauss-cnn-balls_and_hands_location
 
-Umiem? MZ
-
+Piłeczki2
