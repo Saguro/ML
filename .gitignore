@@ -1,6 +1,9 @@
 .DS_Store
 __pycache__/
+frames
 data
+submovavg150_generated
+.keep
 .ipynb_checkpoints/
 __cache__/
 __cache__
